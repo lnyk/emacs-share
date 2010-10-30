@@ -113,8 +113,8 @@
 ;(define-key global-map [(meta ?\])] "’")
 
 ;;Set git support.
-(setq load-path (cons (expand-file-name "~/Projects/github/git-emacs/") load-path))
-;;(add-to-list 'load-path "~/Projects/github/git-emacs/")
+(setq load-path (cons (expand-file-name "~/Projects/Git.GitHub/git-emacs/") load-path))
+;;(add-to-list 'load-path "~/Projects/Git.GitHub/git-emacs/")
 (require 'git-emacs)
 ;;(setq load-path (cons (expand-file-name "/opt/local/share/doc/git-core/contrib/emacs") load-path))
 ;; (require 'vc-git)
