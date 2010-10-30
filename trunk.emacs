@@ -16,11 +16,14 @@
 ;; 以前的 Emacs 都是如此绑定的，Emacs 21 之后反而使我不习惯了。不过现在我已
 ;; 经基本不用了，因为 M-< 和 M-> 更方便。而且，如果你是新手，还是行首和行尾
 ;; 更直观。
-(global-set-key [(home)] 'beginning-of-buffer)
-(global-set-key [(end)] 'end-of-buffer)
+;(global-set-key [(home)] 'beginning-of-buffer)
+;(global-set-key [(end)] 'end-of-buffer)
 
 ;; 不显示 Emacs 的开始画面。
 (setq inhibit-startup-message t)
+
+;;最大化启动 
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 142) (height . 49)))
 
 ;; 当光标在行尾上下移动的时候，始终保持在行尾。
 (setq track-eol t)
@@ -77,6 +80,8 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(current-language-environment "UTF-8")
  '(vc-path (quote ("/opt/local/bin/")))
  '(weblogger-config-alist (quote (("blog.williamyao.com" ("user" . "WilliamYao") ("server-url" . "http://blog.williamyao.com/xmlrpc.php") ("weblog" . "1")) ("default" ("user" . "WilliamYao") ("server-url" . "http://blog.williamyao.com/xmlrpc.php") ("weblog" . "1"))))))
 (custom-set-faces
@@ -127,3 +132,32 @@
 ;;(setq truncate-partial-width-windows nil)
 (global-visual-line-mode 1)
 (global-linum-mode 1)
+
+;;用 ALT + 上下箭 滚动
+(global-set-key [(meta down)] (lambda (&optional n) (interactive "p") (scroll-up (or n 1))))
+(global-set-key [(meta up)] (lambda (&optional n) (interactive "p") (scroll-down (or n 1))))
+
+;;平滑显示 
+(setq scroll-step 1 scroll-margin 3 scroll-conservatively 10000) 
+
+;;模式行显示列号 
+(setq column-number-mode t)
+
+;;标题栏显示文件的完整路径 
+(setq frame-title-format '("%S" (buffer-file-name "%f" (dired-directory dired-directory "%b")))) 
+
+;;光标靠近鼠标时，鼠标自动让开 
+(mouse-avoidance-mode 'animate) 
+
+;;直接打开和显示图片 
+(auto-image-file-mode) 
+
+;;跳转到某一行 
+(global-set-key [(control c) (control g)] 'goto-line) 
+
+;;设置光标为竖线 
+(setq-default cursor-type 'bar) 
+;;(setq-default cursor-type 'box) ;设置光标为方块
+
+;;以y/n代表yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
