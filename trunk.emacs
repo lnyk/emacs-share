@@ -1,3 +1,5 @@
+(add-to-list 'load-path "/usr/share/emacs") 
+(add-to-list 'load-path "/usr/share/emacs/site-lisp") 
 
 ;; C-x C-b 缺省的绑定很不好用，改成一个比较方便的 electric-buffer-list，执行
 ;; 之后：
@@ -48,12 +50,12 @@
 (setq-default kill-whole-line t)
 
 ;; Set load-path
-(setq load-path (cons (expand-file-name "~/Projects/elisp/load-path") load-path))
+;(setq load-path (cons (expand-file-name "~/Projects/elisp/load-path") load-path))
 ;(add-to-list 'load-path (expand-file-name "~/Projects/elisp/load-path"))
 
 ;; Set auto-install
 (require 'auto-install)
-(setq auto-install-directory "~/Projects/elisp/load-path/")
+(setq auto-install-directory "/usr/share/emacs/site-lisp/")
 
 ;; Set python-mode
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
@@ -89,7 +91,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(cursor ((t nil))))
 
 ;;Set org-mode
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
@@ -118,15 +120,15 @@
 ;(define-key global-map [(meta ?\])] "’")
 
 ;;Set git support.
-(setq load-path (cons (expand-file-name "~/Projects/Git.GitHub/git-emacs/") load-path))
-;;(add-to-list 'load-path "~/Projects/Git.GitHub/git-emacs/")
+(setq load-path (cons (expand-file-name "~/Projects/github/git-emacs/") load-path))
+;;(add-to-list 'load-path "~/Projects/github/git-emacs/")
 (require 'git-emacs)
-;;(setq load-path (cons (expand-file-name "/opt/local/share/doc/git-core/contrib/emacs") load-path))
-;; (require 'vc-git)
-;; (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
-;; (require 'git)
-;; (autoload 'git-blame-mode "git-blame"
-;;           "Minor mode for incremental blame for Git." t)
+(setq load-path (cons (expand-file-name "/opt/local/share/doc/git-core/contrib/emacs") load-path))
+ (require 'vc-git)
+ (when (featurep 'vc-git) (add-to-list 'vc-handled-backends 'git))
+ (require 'git)
+ (autoload 'git-blame-mode "git-blame"
+           "Minor mode for incremental blame for Git." t)
 
 ;;Set Line Wrap
 ;;(setq truncate-partial-width-windows nil)
@@ -156,8 +158,8 @@
 (global-set-key [(control c) (control g)] 'goto-line) 
 
 ;;设置光标为竖线 
-(setq-default cursor-type 'bar) 
-;;(setq-default cursor-type 'box) ;设置光标为方块
+;;(setq-default cursor-type 'bar) 
+(setq-default cursor-type 'box) ;设置光标为方块
 
 ;;以y/n代表yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
