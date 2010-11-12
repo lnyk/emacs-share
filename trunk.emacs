@@ -49,10 +49,6 @@
 ;; 在行首 C-k 时，同时删除该行。
 (setq-default kill-whole-line t)
 
-;; Set load-path
-;(setq load-path (cons (expand-file-name "~/Projects/elisp/load-path") load-path))
-;(add-to-list 'load-path (expand-file-name "~/Projects/elisp/load-path"))
-
 ;; Set auto-install
 (require 'auto-install)
 (setq auto-install-directory "/usr/share/emacs/site-lisp/")
@@ -63,17 +59,17 @@
 (autoload 'python-mode "python-mode" "Python editing mode." t)
 
 ;; Set Chinese Support
-(global-font-lock-mode t)
-(setq font-lock-maximum-decoration t)
-(set-language-environment 'Chinese-GB)
-(set-keyboard-coding-system 'euc-cn)
-(set-clipboard-coding-system 'euc-cn)
-(set-terminal-coding-system 'euc-cn)
-(set-buffer-file-coding-system 'euc-cn)
-(set-selection-coding-system 'euc-cn)
-(modify-coding-system-alist 'process "*" 'euc-cn)
-(setq default-process-coding-system '(euc-cn . euc-cn))
-(setq-default pathname-coding-system 'euc-cn)
+;;(global-font-lock-mode t)
+;;(setq font-lock-maximum-decoration t)
+;;(set-language-environment 'Chinese-GB)
+;;(set-keyboard-coding-system 'euc-cn)
+;;(set-clipboard-coding-system 'euc-cn)
+;;(set-terminal-coding-system 'euc-cn)
+;;(set-buffer-file-coding-system 'euc-cn)
+;;(set-selection-coding-system 'euc-cn)
+;;(modify-coding-system-alist 'process "*" 'euc-cn)
+;;(setq default-process-coding-system '(euc-cn . euc-cn))
+;;(setq-default pathname-coding-system 'euc-cn)
 
 ;;Set Weblogger and xml-rpc
 (require 'weblogger)
@@ -121,7 +117,6 @@
 
 ;;Set git support.
 (setq load-path (cons (expand-file-name "~/Projects/github/git-emacs/") load-path))
-;;(add-to-list 'load-path "~/Projects/github/git-emacs/")
 (require 'git-emacs)
 (setq load-path (cons (expand-file-name "/opt/local/share/doc/git-core/contrib/emacs") load-path))
  (require 'vc-git)
