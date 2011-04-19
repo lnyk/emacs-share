@@ -158,3 +158,16 @@
 
 ;;以y/n代表yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
+
+;;AUCTex Options
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+;;不使用 TAB 来缩进
+(setq TeX-auto-untabify t)
+;;在工具栏显示编辑按钮
+(add-hook 'LaTeX-mode-hook #'LaTeX-install-toolbar)
+;;不要默认指定主文件
+(setq TeX-auto-save nil)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(setenv "PATH" (concat "/usr/texbin:" "/opt/local/bin:" (getenv "PATH")))
