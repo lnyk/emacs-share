@@ -1,5 +1,4 @@
-(add-to-list 'load-path "/usr/share/emacs") 
-(add-to-list 'load-path "/usr/share/emacs/site-lisp") 
+(add-to-list 'load-path "/User/William/Projects/emacs/site-lisp") 
 
 ;; C-x C-b 缺省的绑定很不好用，改成一个比较方便的 electric-buffer-list，执行
 ;; 之后：
@@ -51,7 +50,7 @@
 
 ;; Set auto-install
 (require 'auto-install)
-(setq auto-install-directory "/usr/share/emacs/site-lisp/")
+(setq auto-install-directory "/User/William/Projects/emacs/site-lisp/")
 
 ;; Set python-mode
 (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
