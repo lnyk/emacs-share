@@ -25,7 +25,9 @@
 
 (tool-bar-mode -1)
 
-;; Remove yes/no question when closing a buffer
+;; Kill a buffer without answering confirmation
+(global-set-key [(control x) (k)] 'kill-this-buffer)
+;; Auto kill processes when killing a buffer.
 (delq 'process-kill-buffer-query-function kill-buffer-query-functions)
 
 (if (not (memq system-type '(windows-nt ms-dos)))
