@@ -30,6 +30,9 @@
 ;; Auto kill processes when killing a buffer.
 (delq 'process-kill-buffer-query-function kill-buffer-query-functions)
 
+;; Change yes-or-no to y-or-n
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (if (not (memq system-type '(windows-nt ms-dos)))
     (require 'magit))
 
