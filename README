@@ -1,0 +1,13 @@
+My Emacs configuration.
+
+Should put files in ~/.emacs.d/
+
+Require List:
+	GNU Emacs (off cause!) version after 24
+	gabrielelanaro's emacs-for-python at https://github.com/gabrielelanaro/emacs-for-python.git
+	chriskempson's tomorrow-theme at https://github.com/chriskempson/tomorrow-theme.git
+
+Optional packages:
+	Magit (if you want to enhance your git usage)
+
+Have Fun!
