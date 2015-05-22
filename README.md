@@ -1,4 +1,5 @@
-# My Emacs configuration for python development using emacs!
+#
+My Emacs configuration for purcell's emacs.d
 Should put files in ~/.emacs.d/
 
 #Requirements
